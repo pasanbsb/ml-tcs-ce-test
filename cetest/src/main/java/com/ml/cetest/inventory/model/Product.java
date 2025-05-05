@@ -16,6 +16,9 @@ public class Product {
     private Double price;
     private Double stock;
 
+    public Product() {
+    }
+
     public Product(String ticker, LocalDate priceDate, Double price, Double stock) {
         this.ticker = ticker;
         this.priceDate = priceDate;
