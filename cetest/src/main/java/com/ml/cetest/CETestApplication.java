@@ -9,8 +9,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
 //@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class })
-@SpringBootApplication(scanBasePackages={
-		"com.ml.cetest.sp500api", "com.ml.cetest.inventory"})
+@SpringBootApplication(scanBasePackages={"com.ml.cetest.sp500api", "com.ml.cetest.inventory"})
 public class CETestApplication {
 	private static final Logger logger = LoggerFactory.getLogger(CETestApplication.class);
 
