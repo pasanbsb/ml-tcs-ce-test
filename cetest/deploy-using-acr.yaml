@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ml-tcs-cetest-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: ml-tcs-cetest-app
+  template:
+    metadata:
+      labels:
+        app: ml-tcs-cetest-app
+    spec:
+      containers:
+        - name: ml-tcs-cetest-app
+          image: pbacrrepo.azurecr.io/pasanbsb/ml-tcs-cetest:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+# service type loadbalancer
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: ml-tcs-cetest-app
+    k8s-app: ml-tcs-cetest-app
+  name: ml-tcs-cetest-app
+spec:
+  ports:
+    - name: http
+      port: 80
+      protocol: TCP
+      targetPort: 8080
+  type: LoadBalancer
+  selector:
+    app: ml-tcs-cetest-app
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+data:
+  secret-key: dummy-secret-key
