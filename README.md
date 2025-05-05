@@ -1,2 +1,2 @@
-# ml-tcs-ce-test
+# ML-TCS-CE-Test-App
 ml-tcs-ce-test
