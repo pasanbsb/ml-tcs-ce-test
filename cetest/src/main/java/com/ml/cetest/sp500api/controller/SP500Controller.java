@@ -7,7 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/sp500")
 public class SP500Controller {
 
     private static final Logger logger = LoggerFactory.getLogger(SP500Controller.class);
