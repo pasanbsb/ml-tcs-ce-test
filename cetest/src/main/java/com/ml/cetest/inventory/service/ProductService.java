@@ -1,6 +1,5 @@
 package com.ml.cetest.inventory.service;
 
-import com.ml.cetest.inventory.controller.ProductController;
 import com.ml.cetest.inventory.model.Product;
 import com.ml.cetest.inventory.repository.ProductRepository;
 import org.slf4j.Logger;
